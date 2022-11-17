@@ -1,0 +1,1 @@
+### Simple Blog made with Strapi, Tailwind, and Next
