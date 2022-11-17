@@ -8,7 +8,7 @@ import { getStrapiMedia } from "../../lib/media"
 
 const Article = ({ article, categories }) => {
   const imageUrl = getStrapiMedia(article.attributes.image)
-
+console.log('articles', article.attributes)
   const seo = {
     metaTitle: article.attributes.title,
     metaDescription: article.attributes.description,
@@ -38,12 +38,12 @@ const Article = ({ article, categories }) => {
           <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
             <div>
               {article.attributes.author.picture && (
-                <NextImage image={article.attributes.author.picture} />
+                <NextImage image={article.attributes.author.data.attributes.picture} />
               )}
             </div>
             <div className="uk-width-expand">
               <p className="uk-margin-remove-bottom text-3xl text-purple-5">
-                By {article.attributes.author.name}
+                By {article.attributes.author.data.attributes.name}
               </p>
               <p className="uk-text-meta uk-margin-remove-top uk-container">
                 <Moment format="MMM Do YYYY">
